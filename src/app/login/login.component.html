@@ -1,0 +1,33 @@
+<!-- <p>login works!</p> -->
+<html>
+    <head>
+        <title>Log In Page</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Naukri.com</h1>
+        <div class="form-group" align="center" style="margin-top: 100px;">
+        <form [formGroup]="userFormGroup" >
+            <div class="form-group">
+                <h2>Log In</h2>
+            </div>
+            <div></div>
+            <div class="form-group">
+                <label>Email Id</label><br>
+                <input type="text" class="form-control col-md-3" placeholder="Email your active Email Id" formControlName="emailId">
+                <span class="form-text text-danger" *ngIf="userFormGroup.controls.emailId.invalid && userFormGroup.controls.emailId.touched">This Field is Required</span>
+            </div>
+            <div class="form-group">
+                <label>Password</label><br>
+                <input type="password" class="form-control col-md-3" placeholder="Enter your password" formControlName="password">
+                <span class="form-text text-danger" *ngIf="userFormGroup.controls.password.invalid && userFormGroup.controls.password.touched">This Field is Required</span>
+            </div>
+            <div>
+                <button class="btn btn-primary" (click)="onLoginClick()" [disabled]="!userFormGroup.valid">Login</button>
+            </div><br>
+            <div>
+                Not a member as yet?<a routerLink="/register">Registor Now</a>
+            </div>
+        </form>
+    </div>
+    </body>
+</html>

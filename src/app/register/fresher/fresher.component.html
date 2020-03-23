@@ -1,0 +1,123 @@
+<!-- <p>fresher works!</p> -->
+
+
+<div class="form-group" align="center" style="margin-top: 50px;" [ngStyle]="displaypersonaldata">
+    <form [formGroup]="fresherPersonalFormGroup">
+        <div class="form-group">
+            <h2>Personal Information</h2>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Name </label> -->
+            <input type="text" class="form-control" placeholder="Enter your full name" formControlName="name">
+            <span class="text-danger" *ngIf="fresherPersonalFormGroup.controls.name.invalid && fresherPersonalFormGroup.controls.name.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Email ID </label> -->
+            <input type="text" class="form-control" placeholder="Enter your active email id" formControlName="emailId">
+            <span class="text-danger" *ngIf="fresherPersonalFormGroup.controls.emailId.invalid && fresherPersonalFormGroup.controls.emailId.touched">Please specify your email id</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Create Password </label> -->
+            <input type="password" class="form-control" placeholder="Enter the password" formControlName="password">
+            <span class="text-danger" *ngIf="fresherPersonalFormGroup.controls.password.invalid && fresherPersonalFormGroup.controls.password.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Mobile Number </label> -->
+            <input type="number" class="form-control" placeholder="Enter your mobile number" formControlName="mobileNumber">
+            <span class="text-danger" *ngIf="fresherPersonalFormGroup.controls.mobileNumber.invalid && fresherPersonalFormGroup.controls.mobileNumber.touched">Please specify valid mobile number</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label >Current Location</label> -->
+            <select formControlName="currentLocation" class="form-control">
+                <option disabled="" selected="">-- Please select the city --</option>
+                <option>Surat</option>
+                <option>Ahmedabad</option>
+                <option>Vadodra</option>
+                <option>Jamnagar</option>
+                <option>Anand</option>
+            </select>
+            <span class="text-danger" *ngIf="fresherPersonalFormGroup.controls.currentLocation.invalid && fresherPersonalFormGroup.controls.currentLocation.touched">Please specify your city</span>
+        </div>
+        <div class="form-group col-md-5">
+            <input type="file" class="form-control" formControlName="resume" placeholder="upload resume" >
+        </div>
+        <div class="form-group col-md-5">
+            <button class="btn-primary btn-lg" (click)="onRegisterClick()" [disabled]="!fresherPersonalFormGroup.valid">Register Now</button>
+        </div>
+    </form>
+</div>
+
+
+    <!-- -----------------------------------------education------------------------------------------------ -->
+
+<div class="form-group" align="center" style="margin-top: 50px;" [ngStyle]="displayeducationdata">
+    <form [formGroup]="fresherEducationFormGroup">
+        <div class="form-group">
+            <h2>Education Information</h2>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label >   Higest Qualification</label> -->
+            <select formControlName="qualification" class="form-control">
+                <option disabled="" selected="">-- Select your  Higest Qualification --</option>
+                <option>Doctor/PhD</option>
+                <option>Masters/Post-Graduation</option>
+                <option>Graduation/Diploma</option>
+                <option>12th</option>
+                <option>10th</option>
+                <option>Below 10th</option>
+            </select>
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.qualification.invalid && fresherEducationFormGroup.controls.qualification.touched">Please specify your Highest Qualification</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Course </label> -->
+            <input type="text" class="form-control" placeholder="Enter your Course" formControlName="course">
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.course.invalid && fresherEducationFormGroup.controls.course.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Specializaion </label> -->
+            <input type="text" class="form-control" placeholder="Enter your Specialization" formControlName="specialization">
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.specialization.invalid && fresherEducationFormGroup.controls.specialization.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>University/College </label> -->
+            <input type="text" class="form-control" placeholder="Enter your Collage Name" formControlName="college">
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.college.invalid && fresherEducationFormGroup.controls.college.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label >   Higest Qualification</label> -->
+            <select formControlName="courseType" class="form-control">
+                <option disabled="" selected="">-- Select your  Course Type --</option>
+                <option>Full Time</option>
+                <option>Part Time</option>
+                <option>Correspondence</option>
+            </select>
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.courseType.invalid && fresherEducationFormGroup.controls.courseType.touched">Please specify your Course Type</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label >   Passing Year</label> -->
+            <select formControlName="passingYear" class="form-control">
+                <option disabled="" selected="">-- Select your  Passing Year --</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+            </select>
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.passingYear.invalid && fresherEducationFormGroup.controls.passingYear.touched">Please specify your Passing Year</span>
+        </div>
+        <div class="form-group col-md-5">
+            <!-- <label>Course </label> -->
+            <input type="text" class="form-control" placeholder="Enter your Skill" formControlName="skill">
+            <span class="text-danger" *ngIf="fresherEducationFormGroup.controls.skill.invalid && fresherEducationFormGroup.controls.skill.touched">This Field is Required</span>
+        </div>
+        <div class="form-group col-md-5">
+           
+            <button class="btn-primary btn-lg" (click)="onContinue()" [disabled]="!fresherEducationFormGroup.valid">Continue</button>
+        </div>
+    </form>
+</div>
